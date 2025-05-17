@@ -7,3 +7,17 @@ Description:
 -Recognize correlation coefficient values and relationships.
 -Identify probability and distributions in statistical analysis.
 -Evaluate the purpose of bootstrapping in statistical analysis.
+----------------------------------------------------------------------------------------------
+Topic name: Introduction to Attention and Language Models
+Date: 2025-05-17
+Description:
+- 2001 : First Neural Language Model : Predic future words in a  sentence 
+- 2013 : Large scale Bag of Words : CBOW(Continuous Bag of Word),Skip-gram, Direct and Indirect Bias.
+- 2013/2014 :  RNNs and CNNs for NLP
+- 2014 : Sequence to sequence models : Encoder ,Decoder
+- 2015 : Attention :Compressing into a fixed vector limits memory, but attention helps the decoder by giving direct access to all encoder outputs.
+- 2017 : Transformers : 'Attention is all you need' 
+- There are two types of Language models: 1)Auto-regressive 2)Auto-encoding
+- Auto-regressive: Goal is to predict a future token, Use case: Natural Language Generator, GPT Family
+- Auto-encoding : Goal is to learn representation of the  entire sequence, Use case: Natural Language Understanding(NLU), BERT
+- Transformers can perform both Auto-regressive and Auto-encoding tasks
