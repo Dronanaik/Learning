@@ -15,3 +15,12 @@ Description:
 - Lemmatization uses vocabulary and morphology analysis to return a real word (e.g., ‘better’ → ‘good’).
 - Lemmatization is more accurate but computationally heavier than stemming.
 - These steps help in reducing dimensionality in NLP tasks like search and classification.
+-----------------------------------------------------------------------------------------------------------------
+Topic name: Stop Words Removal
+Date: 2025-05-17
+Description:
+-Stop words are common words (e.g., “the”, “is”, “and”) that carry little semantic value.
+-Removing them can reduce dimensionality and noise in text data.
+-However, in some contexts, stop words may carry important meaning and should be retained.
+-Libraries like NLTK and spaCy offer customizable stop word lists.
+-This preprocessing step is often used in search engines and text classification tasks.
