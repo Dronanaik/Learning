@@ -1,0 +1,9 @@
+Topic name: Machine Learning Foundations: Statistics
+Date: 2025-05-16
+Description:
+-Apply measures of central tendency and variability in a dataset.
+-Interpret the purpose of standard error from sample data.
+-Analyze the meaning of negative correlation.
+-Recognize correlation coefficient values and relationships.
+-Identify probability and distributions in statistical analysis.
+-Evaluate the purpose of bootstrapping in statistical analysis.

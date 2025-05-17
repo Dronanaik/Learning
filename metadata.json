@@ -1,0 +1,15 @@
+[
+    {
+      "main_topic": "Machine Learning",
+      "description_file": "notes/Machine Learning.txt"
+    },
+    {
+        "main_topic": "NLP",
+        "description_file": "notes/NLP.txt"
+    },
+    {
+        "main_topic": "LinkedIn Learning",
+        "description_file": "notes/LinkedIn Learning.txt"
+    }
+]
+  

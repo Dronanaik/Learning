@@ -1,0 +1,39 @@
+Topic name: Decision Trees  
+Date: 2025-05-12  
+Description:
+- Decision Trees are a supervised learning method used for both classification and regression tasks.
+- They split the dataset into subsets based on feature values, building a tree structure.
+- Each internal node represents a test on an attribute, each branch a result, and each leaf a class label or output.
+- Popular algorithms include ID3, C4.5, and CART.
+- Overfitting is a common issue; pruning techniques help mitigate it.
+- Decision Trees are intuitive and easy to visualize but sensitive to noisy data. 
+----------------------------------------------------------------------------------------------
+
+Topic name: Logistic Regression
+Date: 2025-05-15
+Description:
+- Logistic Regression is a classification algorithm used to predict the probability of a binary outcome.
+- It uses the sigmoid function to map predicted values between 0 and 1.
+- The model estimates parameters using Maximum Likelihood Estimation.
+- Common evaluation metrics include accuracy, precision, recall, and ROC-AUC score.
+- It is widely used in applications like spam detection, medical diagnosis, and credit scoring.
+-----------------------------------------------------------------------------------------------------
+Topic name: Support Vector Machines (SVM)
+Date: 2025-05-17
+Description:
+- SVM is a powerful classification algorithm that finds the optimal hyperplane separating data into classes.
+- It maximizes the margin between the closest points of different classes (support vectors).
+- Kernel functions allow SVM to operate in high-dimensional or infinite-dimensional spaces.
+- Common kernels include linear, polynomial, and radial basis function (RBF).
+- It is effective in high-dimensional spaces and text classification.
+- Training time can be high for large datasets, and it’s sensitive to the choice of kernel and parameters.
+--------------------------------------------------------------------------------------------------------------------
+Topic name: Naive Bayes Classifier
+Date: 2025-05-18
+Description:
+- Naive Bayes is a probabilistic classifier based on Bayes’ Theorem with the “naive” assumption of independence between features.
+- It works well with high-dimensional input data and is widely used for text classification.
+- Variants include Gaussian, Multinomial, and Bernoulli Naive Bayes.
+- It is fast, simple, and performs surprisingly well even with its strong assumptions.
+- It struggles when features are highly correlated.
+- Common use cases include spam detection, sentiment analysis, and document categorization.

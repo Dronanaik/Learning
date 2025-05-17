@@ -1,0 +1,17 @@
+Topic name: Tokenization
+Date: 2025-05-17
+Description:
+- Tokenization is the process of breaking text into smaller units called tokens (words, subwords, or characters).
+- It is a fundamental step in NLP pipelines before feeding text into models.
+- Word-level, subword-level (e.g., Byte Pair Encoding), and character-level tokenization are commonly used.
+- Tokenization methods must handle punctuation, contractions, and special characters effectively.
+- Libraries like NLTK, spaCy, and Hugging Face provide robust tokenization tools.
+-----------------------------------------------------------------------------------------------------------------------
+Topic name: Stemming and Lemmatization
+Date: 2025-05-17
+Description:
+- Both techniques reduce words to their root forms to handle different inflections of the same word.
+- Stemming chops off word ends and can be crude (e.g., Porter Stemmer).
+- Lemmatization uses vocabulary and morphology analysis to return a real word (e.g., ‘better’ → ‘good’).
+- Lemmatization is more accurate but computationally heavier than stemming.
+- These steps help in reducing dimensionality in NLP tasks like search and classification.

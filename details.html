@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subtopic Details</title>
+  <style>
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #FEF3E2;
+      color: #222;
+      line-height: 1.6;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: #EBD3F8;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      max-width: 700px;
+      width: 100%;
+      padding: 2.5rem 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 0.25rem;
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    .meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      font-size: 1.1rem;
+      color: #555;
+      font-weight: 600;
+    }
+
+    .meta-info span {
+      color: #1abc9c;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #34495e;
+      margin-top: 1.5rem;
+      font-weight: 600;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 0.3rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      margin-left: 1.5rem;
+      color: #444;
+      font-size: 1.1rem;
+    }
+
+    ul li {
+      margin-bottom: 0.6rem;
+      transition: background-color 0.3s ease;
+      padding: 0.2rem 0.4rem;
+      border-radius: 5px;
+    }
+
+    ul li:hover {
+      background-color: #d0f0fd;
+      cursor: default;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 1.5rem 1.5rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      .meta-info {
+        font-size: 1rem;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="subtopic-title">Loading...</h1>
+    <div class="meta-info">
+      <p><strong>Topic:</strong> <span id="topic-name"></span></p>
+      <p><strong>Date:</strong> <span id="date"></span></p>
+    </div>
+    <h2>Description:</h2>
+    <ul id="description-list"></ul>
+  </div>
+
+  <script>
+    async function loadDetails() {
+  const params = new URLSearchParams(window.location.search);
+  const topic = params.get('topic') || 'N/A';
+  const subtopic = params.get('subtopic') || 'N/A';
+  const file = params.get('file');
+
+  document.getElementById('subtopic-title').innerText = subtopic;
+  document.getElementById('topic-name').innerText = topic;
+
+  if (!file) {
+    document.getElementById('date').innerText = 'No file specified';
+    document.getElementById('description-list').innerHTML = '<li>No description available.</li>';
+    return;
+  }
+
+  try {
+    const res = await fetch(file);
+    const text = await res.text();
+
+    // Split the text file by the separator line into blocks
+    const blocks = text.split('----------------------------------------------------------------------------------------------');
+
+    // Find the block where "Topic name:" matches the subtopic
+    const matchedBlock = blocks.find(block => {
+      const match = block.match(/Topic name:\s*(.+)/);
+      return match && match[1].trim() === subtopic;
+    });
+
+    if (!matchedBlock) {
+      document.getElementById('date').innerText = 'Subtopic not found in file';
+      document.getElementById('description-list').innerHTML = '<li>No description available.</li>';
+      return;
+    }
+
+    // Extract date from matched block
+    const dateMatch = matchedBlock.match(/Date:\s*(.*)/);
+    const date = dateMatch ? dateMatch[1].trim() : 'Date not available';
+    document.getElementById('date').innerText = date;
+
+    // Extract description block (everything after Description:)
+    const descriptionMatch = matchedBlock.match(/Description:\s*([\s\S]*)/);
+    if (descriptionMatch) {
+      const bulletLines = descriptionMatch[1]
+        .trim()
+        .split('\n')
+        .filter(line => line.trim().startsWith('-'));
+
+      const listElement = document.getElementById('description-list');
+      listElement.innerHTML = '';
+
+      bulletLines.forEach(line => {
+        const li = document.createElement('li');
+        li.innerText = line.replace(/^[-\s]*/, '');
+        listElement.appendChild(li);
+      });
+    } else {
+      document.getElementById('description-list').innerHTML = '<li>No description available.</li>';
+    }
+  } catch (e) {
+    console.error('Error loading subtopic file:', e);
+    document.getElementById('date').innerText = 'Error loading data';
+    document.getElementById('description-list').innerHTML = '<li>Failed to load description.</li>';
+  }
+}
+
+loadDetails();
+
+  </script>
+</body>
+</html>
