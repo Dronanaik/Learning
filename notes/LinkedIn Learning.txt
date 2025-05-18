@@ -21,3 +21,15 @@ Description:
 - Auto-regressive: Goal is to predict a future token, Use case: Natural Language Generator, GPT Family
 - Auto-encoding : Goal is to learn representation of the  entire sequence, Use case: Natural Language Understanding(NLU), BERT
 - Transformers can perform both Auto-regressive and Auto-encoding tasks
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Topic name: How Transformers Use Attention to Process Text
+Date: 2025-05-18
+Description:
+- Introduction to Transformers
+- Scaled dot product attention
+- Standard attention is calculated using 3 matrices : Query,Key,Values
+- Multi-headed attention : Transformers + BERT uses Multi-headed self attention 
+- Transfer Learning:  A model is trained for one task is resued as the starting point for a model for a second task
+- Approach: 1)Select source model 2)Reuse and train model
+- Introduction to PyTorch
+- Fine-tuning Transformers with PyTorch :  
