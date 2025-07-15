@@ -5,4 +5,4 @@ Description:
 - Step Function : For a step function, if the neuron’s output value, which is calculated by sum(inputs · weights) + bias, is greater than 0, the neuron fires (so it would output a 1). Otherwise, it does not fire and would pass along a 0.
 - The concepts of Overfitting and Generalization 
 - So Far I have the understanding of Neural Network, Weights, Bias,Output, Loss,Activation function,ReLU,Step Function,Regression,Clusterirng 
-----------------------------------------------------------------------------------------------
+
