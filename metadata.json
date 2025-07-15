@@ -10,6 +10,10 @@
     {
         "main_topic": "LinkedIn Learning",
         "description_file": "notes/LinkedIn Learning.txt"
+    },
+     {
+        "main_topic": "Neural Networks",
+        "description_file": "notes/Neural Networks.txt"
     }
 ]
   
