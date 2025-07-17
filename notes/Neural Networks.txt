@@ -5,4 +5,15 @@ Description:
 - Step Function : For a step function, if the neuron’s output value, which is calculated by sum(inputs · weights) + bias, is greater than 0, the neuron fires (so it would output a 1). Otherwise, it does not fire and would pass along a 0.
 - The concepts of Overfitting and Generalization 
 - So Far I have the understanding of Neural Network, Weights, Bias,Output, Loss,Activation function,ReLU,Step Function,Regression,Clusterirng 
-
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Topic name: Coding Our First Neurons
+Date: 2025-07-17  
+Description:
+- Input : Inputs are the data that we pass into the model to get desired outputs
+- Weigths : weights are the parameters that we’ll tune later on to get these results
+- Weights are one of the types of values that change inside the model during the training phase, along with biases that also change during training
+- Example : inputs ​= ​[​1​, ​2​, ​3​] ,weights ​= ​[​0.2​, ​0.8​, ​-​0.5​], bias ​= ​2 hence output = 2.3 i.e output ​= ​(inputs[​0​]​*​weights[​0​] ​+ inputs[​1​]​*​weights[​1​] ​+ inputs[​2​]​*​weights[​2​] ​+ ​bias)
+- A Layer of Neurons : Layers are nothing more than groups of neurons  
+- Fully connected​ neural network : every neuron in the current layer has connections to every neuron from the previous layer.
+- What are tensors? : Tensors are ​closely-related to​ arrays OR A tensor object is an object that can be represented as an array.
+- In neural networks, a tensor is the fundamental n-dimensional data structure, where a matrix is a 2D tensor and a vector is a 1D tensor; these are implemented as efficient arrays, while a standard Python list is a slower, more general-purpose container.
